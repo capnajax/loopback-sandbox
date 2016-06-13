@@ -1,0 +1,82 @@
+{
+  "name": "Order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "actnCd": {
+      "type": "string",
+      "required": false
+    },
+    "crtDt": {
+      "type": "string",
+      "required": false
+    },
+    "grandTotalAmt": {
+      "type": "string",
+      "required": false
+    },
+    "guestId": {
+      "type": "string",
+      "id": false,
+      "required": true
+    },
+    "ordId": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "ordStatCd": {
+      "type": "string",
+      "required": false
+    },
+    "ordTotalAmt": {
+      "type": "string",
+      "required": false
+    },
+    "storeId": {
+      "type": "string",
+      "required": false
+    },
+    "totalAdjAmt": {
+      "type": "string",
+      "required": false
+    },
+    "totalPrdPrcAmt": {
+      "type": "string",
+      "required": false
+    },
+    "totalSalesTaxAmt": {
+      "type": "string",
+      "required": false
+    },
+    "totalShpChrgAmt": {
+      "type": "string",
+      "required": false
+    },
+    "totalShpTaxAmt": {
+      "type": "string",
+      "required": false
+    },
+    "totalTaxByTaxCatAmt": {
+      "type": "string",
+      "required": false
+    },
+    "docTypCd": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orderItems": {
+      "type": "hasMany",
+      "model": "OrderItem",
+      "foreignKey": "orderId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
